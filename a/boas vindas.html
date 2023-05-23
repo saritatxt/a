@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boas Vindas</title>
+    <style>
+        body{font:12pt Arial;}
+        button{font-size: 12pt; padding: 30px;}
+    </style>
+</head>
+</head>
+<body>
+    <h1>Boas Vindas</h1>
+    <button id="botao">Iniciar</button>
+    
+
+    <script>
+        let btn = document.getElementById('botao')
+        btn.addEventListener("click",function(e){
+            e.preventDefault()
+
+            let nome =  window.prompt('Qual é o seu nome?')
+            let idade = parseFloat (window.prompt('Olá ' +nome+'! Quantos anos você tem?'))
+            
+                resultado = window.alert(`Acabei de conhecer  ${nome} que tem ${idade} anos de idade!`)
+            
+        })
+    </script> 
+</body>
+</html>

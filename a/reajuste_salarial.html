@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste Salarial</title>
+    <style>
+        body{font:12pt Arial;}
+        button{font-size: 12pt; padding: 30px;}
+    </style>
+</head>
+</head>
+<body>
+    <h1>Reajuste Salarial</h1>
+    <button id="btn">Reajustar</button>
+    <section id="reajuste"><p> Clique no botão para iniciar</p></section>
+
+    <script>
+        var btn = document.getElementById('btn');
+        btn.addEventListener("click", function(e) {
+            e.preventDefault();
+            var nome = window.prompt('Qual o nome do funcionário?');
+            var salario = parseFloat(window.prompt('Insira o salário de ' + nome));
+            var porcentagem = parseFloat(window.prompt('O salário de ' + nome + ' vai ser reajustado em qual porcentagem?'));
+
+            var salarioNovo = (salario * porcentagem / 100) + salario;
+
+            var diferenca = salarioNovo - salario;
+
+            var reajuste = document.getElementById('reajuste');
+            reajuste.innerHTML = `O salário era R$<strong>${salario.toFixed(2)}</strong>. <br>
+            Com um aumento de <strong>${porcentagem.toFixed(2)}%</strong>, o salário vai aumentar R$<strong>${diferenca.toFixed(2)}</strong> no próximo mês. <br>
+            E a partir daí, <strong>${nome}</strong> vai passar a ganhar R$<strong>${salarioNovo.toFixed(2)}</strong>.`;
+        });
+    </script>
+</body>
+</html>

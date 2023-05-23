@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhaskara</title>
+    <style>
+        body{font:12pt Arial;}
+        button{font-size: 12pt; padding: 30px;}
+    </style>
+</head>
+</head>
+<body>
+    <h1>Resolvendo Bhaskara</h1>
+    <br>
+    <button id="botao">Calcular</button>
+
+    <section id="calculo"><p>Considerando uma equação no formato ax² + bx + c = 0, aperte o botão acima para calcular o valor de &Delta;</p></section>
+
+    <script>
+        btn = document.getElementById('botao')
+    btn.addEventListener("click", function (e) {
+    e.preventDefault()
+    let calculo = window.document.getElementById('calculo')
+ 
+
+        let a =Number (window.prompt('Qual é o valor de a?'))
+        let b = Number (window.prompt('Qual é o valor de b?'))
+        let c = Number (window.prompt('Qual é o valor de c?'))
+
+    delta = (b*b)- 4*a*c;
+    calculo.innerHTML = `A equação é <strong>${a}</strong>x² +<strong>${b}</strong>x +<strong>${c}</strong> = 0 <br> 
+    O cálculo realizado será &Delta; = <strong>${b}</strong>² - 4 <strong>${a}</strong> . <strong>${c}</strong> <br> 
+    O valor calculado foi &Delta; = <strong>${delta}</strong>;` 
+    
+    })
+
+    </script>
+</body>
+</html>

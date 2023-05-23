@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor Monetário</title>
+    <style>
+        body{font:12pt Arial;}
+        button{font-size: 12pt; padding: 30px;}
+    </style>
+</head>
+</head>
+<body>
+    
+    <h1>Conversor R$ para US$</h1>
+    <button id="btn">Converter</button>
+    <section id="converter"><p> Clique no botão para iniciar</p></section>
+
+    <script>
+        let dolar = parseFloat(window.prompt('Qual a cota do dólar hoje?'));
+
+        btn = document.getElementById('btn');
+        btn.addEventListener("click", function(e) {
+            e.preventDefault();
+            let reais = parseFloat(window.prompt('Quanto reais você tem?'));
+            
+
+            conversao = reais/dolar
+
+            converter = document.getElementById('converter');
+            converter.innerHTML = `O valor que você tem de R$<strong>${reais.toFixed(2)}</strong> equivale a US$<strong>${conversao.toFixed(2)}</strong> no dia de hoje, com uma cotação equivalente a R$<strong>${dolar.toFixed(2)}</strong>`;
+        });
+    </script>
+</body>
+</html>

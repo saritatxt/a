@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor Temperatura</title>
+    <style>
+        body{font:12pt Arial;}
+        button{font-size: 12pt; padding: 30px;}
+    </style>
+</head>
+</head>
+<body>
+    
+    <h1>Conversor de Temperaturas</h1>
+    <button id="btn">Converter</button>
+    <section id="converter"><p> Clique no botão para iniciar</p></section>
+
+    <script>
+        
+
+        btn = document.getElementById('btn');
+        btn.addEventListener("click", function(e) {
+            e.preventDefault();
+            let celsius = parseFloat(window.prompt('Digite uma temperatura em ºC (Ceusius)?'));
+    
+
+            kelvin = celsius+273
+            farenheint = 1.8*celsius+32
+
+            converter = document.getElementById('converter');
+            converter.innerHTML = `<strong>${celsius.toFixed(1)}</strong> equivale a <strong>${kelvin.toFixed(1)}</strong>K  e <strong>${farenheint.toFixed(1)}</strong>ºF`;
+        });
+    </script>
+</body>
+</html>

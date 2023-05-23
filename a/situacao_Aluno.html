@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação Aluno</title>
+    <style>
+        body{font:12pt Arial;}
+        button{font-size: 12pt; padding: 30px;}
+    </style>
+</head>
+</head>
+<body>
+    <h1>Situação do Aluno</h1>
+
+    <button onclick="inicio()">Entrar com as notas</button>
+    <section id="resultado">
+    <p>Clique no botão acima para informar as notas do aluno</p>
+</section>
+
+<section id="notas"><p></p></section>
+<section id="mensagem"><p></p></section>
+
+
+    <script>
+        function inicio(){
+            let mensagem = document.getElementById('mensagem')
+
+            let nome = window.prompt('Qual é o seu nome?')
+            let res = window.document.getElementById('resultado')
+            res.innerHTML = `Analisando a situação de <strong>${nome}</strong>;`
+        
+            let notaUm = parseFloat(window.prompt('Primeira nota de ' + nome))
+            let notaDois = parseFloat(window.prompt('Segunda nota de ' + nome))
+
+           let media = (notaUm + notaDois)/2
+           
+           let notas = window.document.getElementById('notas')
+            notas.innerHTML = `Com as notas <strong>${notaUm}</strong> e <strong>${notaDois}</strong> a média é <strong>${media}</strong>;` 
+           
+           if(media <3){
+                mensagem.textContent = "Com média abaixo de 3,0 o aluno está REPROVADO";
+            } else if(media>3 || media<6){
+                mensagem.textContent = "Com média entre 3,0 e 6,0 o aluno está em RECUPERAÇÃO"
+            } else if( media > 6){
+                mensagem.textContent = "Com média maior que 6,0 o aluno está APROVADO"
+
+            
+        }
+    }
+    </script>
+</body>
+</html>
